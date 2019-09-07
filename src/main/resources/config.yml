@@ -1,0 +1,15 @@
+Commands:
+  Aliases:
+    Command1:
+      ActualCommand: /help 2
+      Alias: /sechelp
+      Permission: 'some.perm'
+  AddPermissionCommand:
+    Command1:
+      CommandBegin: /help 1
+      Permission: 'some.perm'
+      AllowMoreArguments: false
+      AllowMoreArgumentsByPassPerm: 'some.otherperm'
+Messages:
+  NoPermission: "&cYou do not have the permission to execute this command."
+  TooManyArguments: '&cYou gave too many arguments.'
