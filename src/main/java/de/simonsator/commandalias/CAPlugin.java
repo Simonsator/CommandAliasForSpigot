@@ -15,8 +15,10 @@ public class CAPlugin extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		getDataFolder().mkdir();
-		File file = new File(getDataFolder(), "config.yml");
 		try {
+			File file = new File(getDataFolder(), "config.yml");
+			if (!file.exists())
+				file.createNewFile();
 			getConfig().load(new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8));
 			getConfig().options().copyDefaults(true);
 			saveConfig();
